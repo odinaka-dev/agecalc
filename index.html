@@ -127,7 +127,12 @@
             border-radius: 50%;
             width: 25px;
         }
-
+        .age-Output p {
+            color: hsl(0, 0%, 8%);
+            font-size: 48px;
+            font-style: italic;
+            font-weight: 800;
+        }
         }
     </style>
 
@@ -228,20 +233,22 @@
         const now = new Date();
 
         const diff = now.getTime() - before.getTime();
-        // console.log(diff);
-        const min = Math.round(diff / 1000 / 60);
-        const Hours = Math.round(min / 60);
-        const dayss = Math.round(Hours / 24);
-        const weeks = Math.round(dayss / 7);
-        const Monthss = Math.round(weeks / 4);
-        const yearss = Math.round(Monthss / 12);
+        const diff2 = now.getFullYear() - before.getFullYear()
+
+
+        const diff3 = now.getMonth() - before.getMonth();
+        const diff4 = now.getDay() - before.getDay();
+
+        const yearss = diff2;
+        const monthss = diff3;
+        const dayss = diff4;
 
         const OutYears = document.querySelector(".outyears");
         const OutMonths = document.querySelector(".outmonths");
         const OutDays = document.querySelector(".outdays");
 
         OutYears.textContent = yearss;
-        OutMonths.textContent = Monthss;
+        OutMonths.textContent = monthss;
         OutDays.textContent = dayss;
 
         // the if check for the date calculator
